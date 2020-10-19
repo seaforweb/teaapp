@@ -1,39 +1,46 @@
 <template>
-  <div class="login">
+  <div id="login">
     <div class="top"></div>
     <div class="content">
       <img src="../assets/img/login/login.svg" alt="">
-      <input type="text" placeholder="请输入你的邮箱">
-      <input type="password" placeholder="请输入密码">
+      <input type="text" placeholder="请输入你的邮箱" required="required">
+      <input type="password" placeholder="请输入密码" required="required">
       <img src="../assets/img/login/going.svg" alt="">
     </div>
     <div class="bottom">
-      <p>忘记密码</p>
-      <p class="text">|</p>
-      <p @click="registerClick">用户注册</p>
+      <span @click="findingClick">忘记密码</span>
+      <span class="text">|</span>
+      <span @click="registerClick">用户注册</span>
     </div>
   </div>
 </template>
 
 <script>
-
+  import Register from "./register/Register";
+  import Finding from "./register/Finding"
 export default {
   name: 'Login',
   components: {
+    Register,
+    Finding
   },
   methods:{
-    registerClick(){
-      this.$router.push('/register')
+    registerClick() {
+      this.$router.push('/Register')
+    },
+    findingClick() {
+      this.$router.push('/Finding')
     }
   }
 }
 </script>
 
 <style scoped>
-  .login {
-    width: 320px;
-    height: 568px;
-    margin: auto;
+  #login {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     background-color: rgb(247, 247, 247);
     display: flex;
     flex-direction: column;
@@ -43,28 +50,29 @@ export default {
     height: 10%;
   }
   .content {
-    width: 250px;
-    height: 75%;
+    width: auto;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    flex-wrap: wrap;
   }
   .content img {
     width: 60px;
     height: 60px;
-    position: relative;
-    left: 130px;
-    margin: 15px 0;
+    margin: auto;
     }
   .content input {
     width: 200px;
     height: 40px;
+    border: 0;
     background-color: rgb(228, 228, 228);
     border-radius: 10px;
-    position: relative;
-    left: 65px;
-    margin: 10px 0;
+    margin: auto;
   }
   .bottom {
     width: 100%;
-    height: 15%;
+    height: 35%;
     font-size: 15px;
     align-items: flex-end;
     justify-content: space-around;

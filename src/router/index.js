@@ -4,14 +4,15 @@ import VueRouter from 'vue-router'
 const Home = () => import('../views/home/Home')
 const Study = () => import('../views/study/Study')
 const Discuss = () => import('../views/discuss/Discuss')
-const register = () =>import('../views/register/register')
+const Register = () =>import('../views/register/Register')
+const Finding = () => import('../views/register/Finding')
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '',
-    redirect: 'home'
+    redirect: 'Login'
   },
   // {
   //   path: '/home',
@@ -20,8 +21,13 @@ const routes = [
   {
     path:'/register',
     name: 'register',
-    component: register
+    component: Register
   },
+  {
+    path:'/finding',
+    name: 'finding',
+    component: Finding
+  }
   // {
   //   path: './study',
   //   component: Study
