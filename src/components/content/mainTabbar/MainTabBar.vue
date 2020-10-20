@@ -1,18 +1,18 @@
 <template>
   <tab-bar>
     <tab-bar-item path="/home">
-      <img slot="item-icon" src="~assets/img/tabbar/home.svg" alt="">
-      <img slot="item-icon-active" src="~assets/img/tabbar/home_active.svg" alt="">
-      <div slot="item-text">寻茶（主页）</div>
+      <img slot="item-icon" src="~assets/img/tabbar/home.png" alt="">
+      <img slot="item-icon-active" src="~assets/img/tabbar/home_active.png" alt="">
+      <div slot="item-text">寻茶</div>
     </tab-bar-item>
     <tab-bar-item path="/study">
-      <img slot="item-icon" src="~assets/img/tabbar/category.svg" alt="">
-      <img slot="item-icon-active" src="~assets/img/tabbar/category_active.svg" alt="">
+      <img slot="item-icon" src="~assets/img/tabbar/study.png" alt="">
+      <img slot="item-icon-active" src="~assets/img/tabbar/study_active.png" alt="">
       <div slot="item-text">学茶</div>
     </tab-bar-item>
     <tab-bar-item path="/discuss">
-      <img slot="item-icon" src="~assets/img/tabbar/shopcart.svg" alt="">
-      <img slot="item-icon-active" src="~assets/img/tabbar/shopcart_active.svg" alt="">
+      <img slot="item-icon" src="~assets/img/tabbar/discuss.png" alt="">
+      <img slot="item-icon-active" src="~assets/img/tabbar/discuss_active.png" alt="">
       <div slot="item-text">论茶</div>
     </tab-bar-item>
   </tab-bar>

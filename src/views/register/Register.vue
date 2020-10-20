@@ -1,33 +1,32 @@
 <template>
   <div id="register">
     <div class="top">
-      <div @click="goOff()"><</div>
+      <img src="~/assets/img/login/back.png" alt="" @click="goOff()">
     </div>
     <div class="content">
-      <input type="text">
+      <input type="text" v-model="photo">
       <label>选择你的头像</label>
       <div>
         <label>昵称：</label>
-        <input type="text">
+        <input type="text" v-model="rename">
       </div>
       <div>
         <label>绑定邮箱：</label>
-        <input type="text">
+        <input type="text" v-model="add">
       </div>
       <div>
         <label>输入密码：</label>
-        <input type="password" name="pw">
+        <input type="password" placeholder="请输入6~15位密码" v-model="Pwd">
       </div>
       <div>
         <label>确认密码：</label>
-        <input type="password" name="pw">
-      </div>
-      <div>
-        <img src="" alt="">
+        <input type="password" placeholder="请再输入一遍密码" v-model="checkPwd">
       </div>
     </div>
     <div class="bottom">
-      <img src="" alt="">
+      <span  @click="Confirm">
+        <img src="~/assets/img/login/going.png" alt="">
+      </span>
     </div>
   </div>
 </template>
@@ -40,13 +39,43 @@
     components: {
       Login,
     },
+    data() {
+      return{
+        photo: '',
+        rename:'',
+        add:'',
+        Pwd:'',
+        checkPwd:''
+      }
+    },
+    updated() {
+      // console.log(this.Pass, this.checkPass);
+    },
     methods: {
       goOff() {
         if (window.history.length <= 1) {
-          this.$router.push({path:'/'})
+          this.$router.push({path: '/'})
           return false
         } else {
           this.$router.go(-1)
+        }
+      },
+      Confirm() {
+        if (this.Pwd != this.checkPwd){
+          alert("密码不一致");
+        }
+        else if (this.Pwd.length <6 || this.Pwd.length > 15){
+          alert("密码有误");
+        }
+        else if (
+            this.Pwd == this.checkPwd &&
+            this.Pwd.length >=6 &&
+            this.Pwd.length <= 15 &&
+            this.rename.length != 0 &&
+            this.add.length != 0
+        ){
+          alert("注册成功");
+          this.$router.push('/');
         }
       }
     }
@@ -67,9 +96,14 @@
     width: auto;
     height: 10%;
   }
+  .top img {
+    width: 25px;
+    height: 25px;
+    float: left;
+  }
   .content {
     width: 100%;
-    height: 60%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -108,6 +142,22 @@
   }
   .bottom {
     width: auto;
-    height: 30%;
+    height: 40%;
+    margin: auto;
+    display: flex;
+  }
+  .bottom span {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: rgb(76, 147, 113);
+  }
+  .bottom span img {
+    width: 50px;
+    height: 50px;
   }
 </style>

@@ -1,30 +1,31 @@
 <template>
   <div id="finding">
-    <form method="post"action="login.php"style="background:#cccccc">
-      <fieldset>
-        <p>
-          <label>用户名:</label>
-          <input type="text"name="username"placeholder="用户名"required="required"/>
-        </p>
-        <p>
-          <label>密码:</label>
-          <input type="password"name="password"placeholder="密码"required="required"/>
-        </p>
-        <p>
-          <label>验证码:</label>
-          <input type="text"name="authcode"value=""required="required" id="code"/>
-          <img id="captcha_img"src="idcode.php"/>
-          <a href="javascript:void(0)"οnclick="document.getElementById('captcha_img').src='idcode.php'">看不清</a><!-- javascript:void(0)是一个死链接不会跳转也不会返回到顶部. -->
-        </p>
-        <p>
-          <a href="register.html">没注册</a>
-        </p>
-        <p>
-          <input type="submit"value="登陆"name="submit" id="submit"/>
-        </p>
-      </fieldset>
-    </form>
-
+    <div class="top">
+      <img src="~/assets/img/login/back.png" alt="" @click="goOff()">
+    </div>
+    <div class="content">
+      <div>
+        <label>绑定邮箱：</label>
+        <input type="text">
+      </div>
+      <div>
+        <input type="text" placeholder="请输入邮箱收到的验证码">
+        <button>点击发送</button>
+      </div>
+      <div>
+        <label>重置密码：</label>
+        <input type="password" v-model.number="Pwd">
+      </div>
+      <div>
+        <label>确认密码：</label>
+        <input type="password" v-model.number="checkPwd">
+      </div>
+    </div>
+    <div class="bottom">
+      <span  @click="Confirm">
+        <img src="~/assets/img/login/going.png" alt="">
+      </span>
+    </div>
   </div>
 </template>
 
@@ -35,34 +36,113 @@
     name: "Finding",
     components: {
       Login,
+    },
+    data() {
+      return {
+        Pwd: '',
+        checkPwd: ''
+      }
+    },
+    methods: {
+      goOff() {
+        if (window.history.length <= 1) {
+          this.$router.push({path:'/'})
+          return false
+        } else {
+          this.$router.go(-1)
+        }
+      },
+      Confirm() {
+        if (this.Pwd != this.checkPwd){
+          alert("密码不一致");
+        }
+        else if (this.Pwd.length <6 || this.Pwd.length > 15){
+          alert("密码有误");
+        }
+        else if (this.Pwd == this.checkPwd
+        ){
+          alert("更改成功");
+          this.$router.push('/')
+        }
+      }
     }
   }
 </script>
 
 <style scoped>
-
-  form{padding:0px 15px 15px 120px;}
-  form{width:500px;height:300px;}
-  form fieldset{border:0;align:center;}
-  form label{display:inline-block;width:60px;text-align:right}
-  input{width:240px;height:30px;}
-  #submit{width:200px;height:35px;position:relative;left:70px;}
-  #submit:hover{
-    cursor: pointer;
-    background:#D8D8D8;
+  #finding {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    flex-direction: column;
   }
-  body{
-    width:100%;
-    height:100%;
-    background: #E9E9E9;
+  .top {
+    width: auto;
+    height: 10%;
   }
-  #finding{position:fixed;left:0px;right:0px;width:706px;margin-left:auto;margin-right:auto;top:100px;}
-  #code{width: 70px;
-    height: 40px;
-    font-size:18px;}
-  #captcha_img{
-    position:relative;
-    bottom:-15px;
+  .top img {
+    width: 25px;
+    height: 25px;
+    float: left;
   }
-  a{position:relative;bottom:-10px;}
+  .content {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 12px;
+  }
+  .content div {
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: flex;
+    text-align: center;
+  }
+  .content div input {
+    width: 180px;
+    height: 30px;
+    border: 0;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+  }
+  .content div button {
+    display:inline-block;
+    width:70px;
+    text-align:center;
+    border-radius: 20px;
+  }
+  .content div label {
+    display:inline-block;
+    width:60px;
+    text-align:right;
+    position: relative;
+    top: 8px;
+  }
+  .bottom {
+    width: auto;
+    height: 40%;
+    margin: auto;
+    display: flex;
+  }
+  .bottom span {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: rgb(76, 147, 113);
+  }
+  .bottom span img {
+    width: 50px;
+    height: 50px;
+  }
 </style>
