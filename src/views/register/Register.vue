@@ -4,15 +4,15 @@
       <img src="~/assets/img/login/back.png" alt="" @click="goOff()">
     </div>
     <div class="content">
-      <input type="text" v-model="photo">
+      <input type="text" v-model="head">
       <label>选择你的头像</label>
       <div>
         <label>昵称：</label>
-        <input type="text" v-model="rename">
+        <input type="text" v-model="nickname">
       </div>
       <div>
         <label>绑定邮箱：</label>
-        <input type="text" v-model="add">
+        <input type="text" v-model="mail">
       </div>
       <div>
         <label>输入密码：</label>
@@ -34,6 +34,7 @@
 <script>
   import Login from "../Login";
 
+  import axios from 'axios'
   export default {
     name: "register",
     components: {
@@ -41,9 +42,9 @@
     },
     data() {
       return{
-        photo: '',
-        rename:'',
-        add:'',
+        head: '',
+        nickname:'',
+        mail:'',
         Pwd:'',
         checkPwd:''
       }
@@ -71,11 +72,30 @@
             this.Pwd == this.checkPwd &&
             this.Pwd.length >=6 &&
             this.Pwd.length <= 15 &&
-            this.rename.length != 0 &&
-            this.add.length != 0
+            this.nickname.length != 0 &&
+            this.mail.length != 0
         ){
-          alert("注册成功");
-          this.$router.push('/');
+          axios.post('http://10.1.71.155:8000/user/register',{nickname:this.nickname, mail:this.mail, pwd: this.Pwd}).then(res => {
+            console.log(res)
+            if (res.data.request.statusText == 'OK') {
+              setTimeout(() => {
+                alert("恭喜你！注册成功")
+                this.$router.push('/')
+              }, 2000)
+            }
+          })
+
+          // registerInfo({nickname:this.nickname, mail:this.mail, pwd: this.Pwd}).then((res) => {
+          //   if (res.data == '1') {
+          //     this.$notify({
+          //       title: '注册成功',
+          //       duration: 3000
+          //     })
+          //     setTimeout(() => {
+          //       this.$router.push('/')
+          //     }, 2000)
+          //   }
+          // })
         }
       }
     }

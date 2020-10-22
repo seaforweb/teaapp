@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="discuss">
     <h2>论茶</h2>
     <main-tab-bar/>
   </div>

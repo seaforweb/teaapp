@@ -9,8 +9,8 @@
         <input type="text">
       </div>
       <div>
-        <input type="text" placeholder="请输入邮箱收到的验证码">
-        <button>点击发送</button>
+        <input type="text" placeholder="请输入邮箱收到的验证码" v-model="authMode">
+        <button @click="sendClick">点击发送</button>
       </div>
       <div>
         <label>重置密码：</label>
@@ -31,6 +31,7 @@
 
 <script>
   import Login from "../Login";
+  import axios from 'axios'
 
   export default {
     name: "Finding",
@@ -40,7 +41,8 @@
     data() {
       return {
         Pwd: '',
-        checkPwd: ''
+        checkPwd: '',
+        authMode: ''
       }
     },
     methods: {
@@ -52,6 +54,19 @@
           this.$router.go(-1)
         }
       },
+      sendClick() {
+        axios.post('http://10.1.71.155:8000/user/finding', {uMail:this.uMail}).then(res => {
+          console.log(res);
+          if(res.data.request.userJudgeMail == '0') {
+            alert("邮箱未注册！")
+          }
+        })
+        userJudgeMail(this.uMail).then(res1 => {
+          if (res1.data.userJudgeMail == '1'){
+            alert("验证码发送成功，请注意查看！")
+          }
+        })
+      },
       Confirm() {
         if (this.Pwd != this.checkPwd){
           alert("密码不一致");
@@ -61,8 +76,13 @@
         }
         else if (this.Pwd == this.checkPwd
         ){
-          alert("更改成功");
-          this.$router.push('/')
+          axios.post('http://10.1.71.155:8000/user/finding', {authCode:this.authCode, Pwd:this.Pwd}).then(res2 => {
+            console.log(res2);
+            if (res2.data.request.userAuthCode = 'OK') {
+              alert("更改成功");
+              this.$router.push('/')
+            }
+          })
         }
       }
     }

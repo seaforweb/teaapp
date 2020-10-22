@@ -9,6 +9,13 @@ const Discuss = () => import('../views/discuss/Discuss')
 const Register = () =>import('../views/register/Register')
 const Finding = () => import('../views/register/Finding')
 
+const More = () => import('../views/more/More')
+const Choose = () => import('../views/more/choose/Choose')
+const GreenTea = () => import('../views/more/childMore/GreenTea')
+const Hangzhou = () => import('../views/more/childMore/Hangzhou')
+const Recommend = () => import('../views/more/childMore/Recommend')
+const ThreeMonth = () => import('../views/more/childMore/ThreeMonth')
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,18 +39,38 @@ const routes = [
     component: Home
   },
   {
-    path: './study',
+    path: '/study',
     component: Study
   },
   {
-    path: './discuss',
+    path: '/discuss',
     component: Discuss
-  }
+  },
 
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  // }
+  {
+    path: '/more',
+    component: More
+  },
+  {
+    path: '/choose',
+    component: Choose
+  },
+  {
+    path: '/greenTea',
+    component: GreenTea
+  },
+  {
+    path: '/hangzhou',
+    component: Hangzhou
+  },
+  {
+    path: '/Recommend',
+    component: Recommend
+  },
+  {
+    path: '/threeMonth',
+    component: ThreeMonth
+  }
 ]
 
 const router = new VueRouter({

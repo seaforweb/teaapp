@@ -3,8 +3,8 @@
     <div class="top"></div>
     <div class="content">
       <img src="../assets/img/login/login.svg" alt="">
-      <input type="text" placeholder="请输入你的邮箱" required="required">
-      <input type="password" placeholder="请输入密码" required="required">
+      <input type="text" placeholder="请输入你的邮箱" required="required" v-model="uMail">
+      <input type="password" placeholder="请输入密码" required="required" v-model="uPwd">
       <span @click="homeClick">
         <img src="../assets/img/login/going.png" alt="" >
       </span>
@@ -21,6 +21,7 @@
   import Register from "./register/Register";
   import Finding from "./register/Finding";
   import Home from "./home/Home";
+  import {userLogin} from "../network/login";
 
 export default {
   name: 'Login',
@@ -28,6 +29,12 @@ export default {
     Register,
     Finding,
     Home
+  },
+  data() {
+    return {
+      uMail: '',
+      uPwd:''
+    }
   },
   methods:{
     registerClick() {
@@ -37,8 +44,24 @@ export default {
       this.$router.push('/Finding')
     },
     homeClick() {
-      this.$router.push('/Home')
-    }
+      if (this.uMail == '' || this.uPwd == '') {
+        alert("用户名或密码不能为空！")
+      }
+      else {
+        userLogin(this.uMail, this.uPwd).then(res => {
+          console.log(res);
+          if (res.statusText == 'OK') {
+            sessionStorage.setItem("uMail", this.uMail)
+            alert("登陆成功！")
+            this.$router.push('/Home')
+          }
+          else {
+            alert("用户名或密码有误！")
+          }
+        })
+      }
+
+    },
   }
 }
 </script>
@@ -96,7 +119,9 @@ export default {
     height: 35%;
     font-size: 15px;
     align-items: flex-end;
-    justify-content: space-around;
     display: flex;
+    justify-content: space-around;
+  }
+  .bottom div {
   }
 </style>
