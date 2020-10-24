@@ -58,7 +58,6 @@
     width: 100%;
     height: 10%;
     margin: auto;
-    background-color: #ff8198;
   }
   .content {
     width: 100%;
@@ -66,11 +65,10 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    background-color: red;
   }
   .content img {
     width: 90%;
-    height: 90%;
+    height: auto;
     margin: auto;
   }
   .content span {
@@ -90,7 +88,6 @@
     margin: auto;
     justify-content: space-between;
     height: 5%;
-    background-color: green;
   }
   .bottom p {
     font-size: 14px;

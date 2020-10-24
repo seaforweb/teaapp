@@ -12,7 +12,7 @@
       path: String,
       activeColor: {
         type: String,
-        default:'black',
+        default:'red',
       }
     },
     data() {
@@ -40,22 +40,27 @@
   .more-bar-item {
     flex: 1;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 49px;
+    height: 30px;
+    padding: 5px;
+    justify-content: space-around;
   }
   .more-bar-item p {
-    font-size: 13px;
+    font-size: 10px;
     color: black;
   }
   .more-bar-item span {
-    font-size: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    align-items: center;
+    padding: 0 0 3px 0;
     color: black;
-    border-bottom: 10px solid rgb(76, 147, 113);
+    border-bottom: 2px solid rgb(76, 147, 113);
   }
   .more-bar-item img {
     width: auto;
-    height: 20px;
-    float: right;
+    height: 15px;
+    position: relative;
+    top: 2px;
   }
 </style>

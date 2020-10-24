@@ -84,7 +84,6 @@
     font-size: 15px;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: blueviolet;
     margin-bottom: 48px;
   }
   .test {

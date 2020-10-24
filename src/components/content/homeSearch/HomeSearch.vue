@@ -21,7 +21,6 @@
     display: flex;
     margin: auto;
     align-items: center;
-    background-color: #666666;
   }
   #home-search div {
     width: 250px;
@@ -39,8 +38,8 @@
     z-index: 9;
   }
   .left {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     position: relative;
     bottom: 22px;
     left: 5px;
@@ -48,7 +47,7 @@
   }
   .right {
     width: auto;
-    height: 20px;
+    height: 18px;
     position: relative;
     bottom: 22px;
     left: 25px;

@@ -77,11 +77,14 @@
         ){
           axios.post('http://10.1.71.155:8000/user/register',{nickname:this.nickname, mail:this.mail, pwd: this.Pwd}).then(res => {
             console.log(res)
-            if (res.data.request.statusText == 'OK') {
+            if (res.data.result == '1') {
               setTimeout(() => {
                 alert("恭喜你！注册成功")
                 this.$router.push('/')
               }, 2000)
+            }
+            else if(res.data.result == '0') {
+              alert("账号已注册！")
             }
           })
 

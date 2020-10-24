@@ -1,41 +1,23 @@
 import {request} from "./require";
 
-// export function userFindingMail(uMail) {
-//   return request({
-//     url:'/user/finding',
-//     method:'post',
-//     params: {
-//       uMail
-//     }
-//   })
-// }
-
-export function userJudgeMail(userJudgeMail) {
+export function userJudgeMail(uMail) {
   return request({
-    url: '/user/finding',
+    url: '/user/verifyCode',
     method: 'get',
     params: {
-      userJudgeMail
+      uMail
     }
   })
 }
 
-export function userAuthCode(userAuthCode) {
+export function userAuthCode(uMail, verifyCode, newPwd) {
   return request({
-    url: '/user/finding',
-    method: 'post',
+    url: '/user/reset',
+    method: 'get',
     params: {
-      userAuthCode
+      uMail,
+      verifyCode,
+      newPwd
     }
   })
 }
-
-// export function userChangeSuccess(userChangeSuccess) {
-//   return request({
-//     url: '/user/finding',
-//     method: 'get',
-//     params: {
-//       userChangeSuccess
-//     }
-//   })
-// }
