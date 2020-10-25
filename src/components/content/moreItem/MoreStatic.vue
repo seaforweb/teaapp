@@ -26,7 +26,6 @@
   .top {
     width: auto;
     height: 45px;
-    background-color: #ff8198;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -5,7 +5,13 @@
     </div>
     <div class="content">
       <span>每日精选</span>
-      <img src="~/assets/img/home/swiper.png" alt="">
+      <div>
+        <el-carousel height="150px">
+          <el-carousel-item v-for="item in imgBox" :key="item.id">
+            <img :src="item.idView" alt="" class="image">
+          </el-carousel-item>
+        </el-carousel>
+      </div>
     </div>
     <div class="bottom">
       <div>
@@ -44,7 +50,16 @@
       moreClick() {
         this.$router.push('/More')
       }
-    }
+    },
+    data() {
+      return {
+        imgBox: [
+          {id: 0, idView: require("@/assets/img/home/photo.png")},
+          {id: 1, idView: require("@/assets/img/home/photo.png")},
+          {id: 2, idView: require("@/assets/img/home/photo.png")},
+        ],
+      }
+    },
   }
 </script>
 
@@ -60,19 +75,18 @@
     margin: auto;
   }
   .content {
-    width: 100%;
-    height: 30%;
+    width: 90%;
+    height: 35%;
     display: flex;
     flex-direction: column;
     margin: auto;
   }
-  .content img {
-    width: 90%;
+   .content .el-carousel__item img {
     height: auto;
-    margin: auto;
+    width: 100%;
   }
   .content span {
-    width: 90%;
+    width: 100%;
     color: black;
     margin: auto;
     font-size: 14px;

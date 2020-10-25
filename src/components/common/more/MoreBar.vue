@@ -15,7 +15,6 @@
     width: 100%;
     margin: auto;
     display: flex;
-    background-color: rgb(250, 250, 2);
     position: fixed;
     left: 0;
     right: 0;

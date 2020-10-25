@@ -2,7 +2,7 @@
   <div id="login">
     <div class="top"></div>
     <div class="content">
-      <img src="../assets/img/login/login.svg" alt="">
+      <img src="../assets/img/login/logo.png" alt="">
       <input type="text" placeholder="请输入你的邮箱" required="required" v-model="uMail">
       <input type="password" placeholder="请输入密码" required="required" v-model="uPwd">
       <span @click="homeClick">
@@ -97,6 +97,7 @@ export default {
     width: 200px;
     height: 30px;
     border: 0;
+    text-align: center;
     background-color: rgb(228, 228, 228);
     border-radius: 10px;
     margin: auto;

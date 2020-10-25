@@ -1,7 +1,7 @@
 <template>
   <div id="home-search">
     <div>
-      <input type="text" placeholder="       客官,进来搜点茶呗~" class="search" >
+      <input type="text" placeholder="客官,进来搜点茶呗~" class="search" >
       <img src="~/assets/img/home/search.png" alt="" class="left">
       <img src="~/assets/img/home/camera.png" alt="" class="right">
     </div>
@@ -26,6 +26,9 @@
     width: 250px;
     height: 25px;
   }
+  #home-search div input {
+    padding-left: 35px;
+  }
   .search {
     width: 280px;
     height: 25px;
@@ -34,7 +37,6 @@
     border-radius: 10px;
     margin: auto;
     position: relative;
-    /*top: 10px;*/
     z-index: 9;
   }
   .left {

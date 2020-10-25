@@ -87,18 +87,6 @@
               alert("账号已注册！")
             }
           })
-
-          // registerInfo({nickname:this.nickname, mail:this.mail, pwd: this.Pwd}).then((res) => {
-          //   if (res.data == '1') {
-          //     this.$notify({
-          //       title: '注册成功',
-          //       duration: 3000
-          //     })
-          //     setTimeout(() => {
-          //       this.$router.push('/')
-          //     }, 2000)
-          //   }
-          // })
         }
       }
     }
