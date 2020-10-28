@@ -11,7 +11,7 @@
       <p>当季新茶</p>
     </div>
     <div class="content">
-      <p>请求图片数据</p>
+      <more-body/>
     </div>
   </div>
 </template>
@@ -19,11 +19,13 @@
 <script>
   import MoreTabBar from "../../../components/content/moreItem/MoreTabBar";
   import MoreStatic from "../../../components/content/moreItem/MoreStatic";
+  import MoreBody from "../../../components/content/moreItem/MoreBody";
   export default {
     name: "Recommend",
     components: {
       MoreTabBar,
-      MoreStatic
+      MoreStatic,
+      MoreBody
     },
     data() {
       return {
@@ -40,15 +42,18 @@
 </script>
 
 <style scoped>
+  #recommend {
+    background-color: rgb(250, 250, 250);
+  }
    .nav {
      width: 100%;
      height: auto;
+     background-color: rgb(250, 250, 250);
+     position: fixed;
 
-    position: fixed;
-
-    top: 85px;
-    right: 0;
-    left: 10px;
+     top: 85px;
+     right: 0;
+     left: 10px;
   }
    .nav p {
      color: black;
@@ -62,11 +67,8 @@
   .content {
     width: 100%;
     height: auto;
-    background-color: lightseagreen;
-    display: flex;
 
-    position: fixed;
-
+    position: relative;
     top: 250px;
     left: 0;
     right: 0;

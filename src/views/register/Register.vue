@@ -43,7 +43,7 @@
     data() {
       return{
         head: '',
-        nickname:'',
+        nickname:'222',
         mail:'',
         Pwd:'',
         checkPwd:''

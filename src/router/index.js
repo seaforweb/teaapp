@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Login from "../views/Login";
 
 const Home = () => import('../views/home/Home')
+const HomeSearchChild = () => import('../components/content/homeSearch/HomeSearchChild')
+
 const Study = () => import('../views/study/Study')
 const Discuss = () => import('../views/discuss/Discuss')
 
@@ -39,9 +41,14 @@ const routes = [
     component: Home
   },
   {
+    path:'/HomeSearchChild',
+    component: HomeSearchChild
+  },
+  {
     path: '/study',
     component: Study
   },
+
   {
     path: '/discuss',
     component: Discuss

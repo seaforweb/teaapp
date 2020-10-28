@@ -14,35 +14,15 @@
       </div>
       <p>产地</p>
       <div>
-        <span>杭州</span>
-        <span>宁波</span>
-        <span>舟山</span>
-        <span>湖州</span>
-        <span>嘉兴</span>
-        <span>金华</span>
-        <span>绍兴</span>
-        <span>温州</span>
-        <span>台州</span>
-        <span>衢州</span>
-        <span>丽水</span>
+        <span v-for="item in place">{{item}}</span>
       </div>
       <p>品类</p>
       <div>
-        <span>红茶</span>
-        <span>绿茶</span>
-        <span>青茶</span>
-        <span>黄茶</span>
-        <span>黑茶</span>
+        <span v-for="item in classify">{{item}}</span>
       </div>
       <p>熟期</p>
       <div>
-        <span>1月~2月</span>
-        <span>2月~3月</span>
-        <span>3月~4月</span>
-        <span>1月</span>
-        <span>2月</span>
-        <span>3月</span>
-        <span>4月</span>
+        <span v-for="item in data">{{item}}</span>
       </div>
     </div>
   </div>
@@ -51,6 +31,21 @@
 <script>
   export default {
     name: "Choose",
+    data() {
+      return {
+        place:[
+            '杭州','宁波','舟山','湖州','嘉兴',
+            '金华','绍兴','温州','台州','衢州','丽水'
+        ],
+        classify:[
+            '红茶','绿茶','青茶','黄茶','黑茶'
+        ],
+        data:[
+            '1月~2月','2月~3月','3月~4月','1月',
+            '2月','3月','4月'
+        ]
+      }
+    },
     methods: {
       goOff() {
         if (window.history.length <= 1) {

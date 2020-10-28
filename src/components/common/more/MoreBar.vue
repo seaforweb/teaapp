@@ -20,6 +20,7 @@
     right: 0;
     top: 45px;
     z-index: 15;
+    background-color: rgb(250, 250, 250);
 
     box-shadow: 0 1px 1px rgba(100, 100, 100 ,.2);
   }

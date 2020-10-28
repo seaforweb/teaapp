@@ -3,14 +3,24 @@
     <div>
       <input type="text" placeholder="客官,进来搜点茶呗~" class="search" >
       <img src="~/assets/img/home/search.png" alt="" class="left">
-      <img src="~/assets/img/home/camera.png" alt="" class="right">
+      <img src="~/assets/img/home/camera.png" alt="" class="right" @click="searchClick">
     </div>
   </div>
 </template>
 
 <script>
+  import HomeSearchChild from "./HomeSearchChild";
+
   export default {
-    name: "HomeSearch"
+    name: "HomeSearch",
+    components: {
+      HomeSearchChild,
+    },
+    methods: {
+      searchClick() {
+        this.$router.push('./HomeSearchChild')
+      }
+    }
   }
 </script>
 

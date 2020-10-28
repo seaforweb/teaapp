@@ -3,7 +3,7 @@
     <more-static/>
     <more-tab-bar/>
     <div class="content">
-      <p>产地:杭州</p>
+      <more-body/>
     </div>
   </div>
 </template>
@@ -11,12 +11,14 @@
 <script>
   import MoreTabBar from "../../../components/content/moreItem/MoreTabBar";
   import MoreStatic from "../../../components/content/moreItem/MoreStatic";
+  import MoreBody from "../../../components/content/moreItem/MoreBody";
 
   export default {
     name: "HangZhou",
     components: {
       MoreTabBar,
-      MoreStatic
+      MoreStatic,
+      MoreBody
     }
   }
 </script>

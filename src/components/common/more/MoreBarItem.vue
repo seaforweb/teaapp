@@ -9,11 +9,11 @@
   export default {
     name: "MoreBarItem",
     props: {
-      path: String,
-      activeColor: {
-        type: String,
-        default:'red',
-      }
+        path: String,
+        // activeColor: {
+        //   type: String,
+        //   default:'#4C9371',
+        // }
     },
     data() {
       return {
@@ -24,9 +24,9 @@
       isActive() {
         return this.$route.path.indexOf(this.path) !== -1
       },
-      activeStyle() {
-        return this.isActive ? {color: this.activeColor} : {}
-      }
+      // activeStyle() {
+      //   return this.isActive ? {color: this.activeColor} : {}
+      // }
     },
     methods: {
       itemClick() {

@@ -89,7 +89,7 @@
     width: 100%;
     color: black;
     margin: auto;
-    font-size: 14px;
+    font-size: 18px;
   }
   .bottom {
     width: 100%;

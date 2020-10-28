@@ -29,6 +29,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(250, 250, 250);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 15;
   }
   .top img {
     width: auto;
