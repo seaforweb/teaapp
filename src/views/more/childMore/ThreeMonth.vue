@@ -28,10 +28,8 @@
     width: 100%;
     height: auto;
     background-color: lightseagreen;
-    display: flex;
 
-    position: fixed;
-
+    position: relative;
     top: 75px;
     left: 0;
     right: 0;

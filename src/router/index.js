@@ -17,6 +17,8 @@ const GreenTea = () => import('../views/more/childMore/GreenTea')
 const Hangzhou = () => import('../views/more/childMore/Hangzhou')
 const Recommend = () => import('../views/more/childMore/Recommend')
 const ThreeMonth = () => import('../views/more/childMore/ThreeMonth')
+const Intro = () => import('../views/more/intro/Intro')
+
 
 Vue.use(VueRouter)
 
@@ -77,6 +79,10 @@ const routes = [
   {
     path: '/threeMonth',
     component: ThreeMonth
+  },
+  {
+    path: '/intro',
+    component: Intro
   }
 ]
 

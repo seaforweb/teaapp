@@ -42,7 +42,10 @@
             cate: '绿茶', place: '金华', data: '3月'}
         ]
       }
-    }
+    },
+    methods: {
+
+  }
   }
 </script>
 
@@ -55,16 +58,15 @@
   .text {
     width: 320px;
     height: auto;
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
+    display: flex;
+    flex-wrap: wrap;
     background-color: rgb(250, 250, 250);
   }
   .body {
     width: 150px;
     height: auto;
-    margin: auto;
     display: flex;
-    float: right;
+
     align-items: flex-end;
   }
   .intro {
