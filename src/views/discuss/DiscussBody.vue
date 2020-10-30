@@ -34,25 +34,25 @@
             title:require("@/assets/img/discuss/title0.png"),
             dynamic:'#'+'茶香记忆'+'#',
           },
-          {id: 0,name:"李星星",
+          {id: 1,name:"李星星",
             head:require("@/assets/img/discuss/head0.png"),
             photo:require("@/assets/img/discuss/photo0.png"),
             title:require("@/assets/img/discuss/title0.png"),
             dynamic:'#'+'茶香记忆'+'#',
           },
-          {id: 0,name:"李星星",
+          {id: 2,name:"李星星",
             head:require("@/assets/img/discuss/head0.png"),
             photo:require("@/assets/img/discuss/photo0.png"),
             title:require("@/assets/img/discuss/title0.png"),
             dynamic:'#'+'茶香记忆'+'#',
           },
-          {id: 0,name:"李星星",
+          {id: 3,name:"李星星",
             head:require("@/assets/img/discuss/head0.png"),
             photo:require("@/assets/img/discuss/photo0.png"),
             title:require("@/assets/img/discuss/title0.png"),
             dynamic:'#'+'茶香记忆'+'#',
           },
-          {id: 0,name:"李星星",
+          {id: 4,name:"李星星",
             head:require("@/assets/img/discuss/head0.png"),
             photo:require("@/assets/img/discuss/photo0.png"),
             title:require("@/assets/img/discuss/title0.png"),
@@ -72,6 +72,8 @@
     background-color: rgb(250, 250, 250);
     margin-bottom: 50px;
 
+    position: relative;
+    top: 45px;
   }
   .top {
     width: 90%;

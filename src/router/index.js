@@ -7,6 +7,9 @@ const HomeSearchChild = () => import('../components/content/homeSearch/HomeSearc
 
 const Study = () => import('../views/study/Study')
 const Discuss = () => import('../views/discuss/Discuss')
+const DiscussBarItem = () => import('../views/discuss/discussBar/DiscussBarItem')
+const Personal = () => import('../views/discuss/personal/Personal')
+const PersonalHead = () => import('../views/discuss/personal/PersonalHead')
 
 const Register = () =>import('../views/register/Register')
 const Finding = () => import('../views/register/Finding')
@@ -54,6 +57,18 @@ const routes = [
   {
     path: '/discuss',
     component: Discuss
+  },
+  {
+    path:'/discussBarItem',
+    component: DiscussBarItem
+  },
+  {
+    path:'/personal',
+    component: Personal
+  },
+  {
+    path:'/personalHead',
+    component: PersonalHead
   },
 
   {
