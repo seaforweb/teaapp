@@ -4,9 +4,7 @@
       <img src="~/assets/img/home/search.png" alt="">
       <input type="text" placeholder="点击搜索">
     </div>
-    <div class="content_title">
-      <discuss-tab-bar/>
-    </div>
+    <discuss-tab-bar/>
     <div class="content_body">
       <img src="@/assets/img/discuss/self_head.png" alt="" class="head">
       <div class="text">
@@ -24,7 +22,7 @@
 </template>
 
 <script>
-  import DiscussTabBar from "./discussBar/DiscussBar";
+  import DiscussTabBar from "./discussBar/DiscussTabBar";
   import DiscussBody from "./DiscussBody";
   import MainTabBar from "../../components/content/mainTabbar/MainTabBar";
   import Personal from "./personal/Personal";
@@ -39,7 +37,7 @@
     },
     methods: {
       selfClick() {
-        this.$router.push('personal')
+        this.$router.push('/personal')
       }
     }
   }
@@ -54,7 +52,7 @@
   .top {
     width: 100%;
     height: 45px;
-    background-color: #ff8198;
+    background-color: rgb(250, 250, 250);
 
     position: fixed;
     z-index: 10;
@@ -82,21 +80,13 @@
     left: 25px;
     z-index: 10;
   }
-  .content_title {
-    width: 95%;
-    height: auto;
-    margin: auto;
-
-    position: relative;
-    top: 45px;
-  }
   .content_body {
     width: 95%;
     height: 20%;
     margin: auto;
 
     position: relative;
-    top: 45px;
+    top: 90px;
   }
   .head {
     width: auto;

@@ -1,12 +1,17 @@
 <template>
   <div id="discuss-bar">
-    <slot></slot>
+    <discuss-bar-item></discuss-bar-item>
   </div>
 </template>
 
 <script>
+  import DiscussBarItem from "./DiscussBarItem";
+
   export default {
     name: "DiscussBar",
+    components: {
+      DiscussBarItem
+    }
   }
 </script>
 
@@ -16,6 +21,8 @@
     margin: auto;
     display: flex;
     position: fixed;
+    align-items: center;
+    justify-content: space-around;
     left: 0;
     right: 0;
     top: 45px;

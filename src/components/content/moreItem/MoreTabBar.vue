@@ -17,8 +17,8 @@
       <span slot="item-icon-active">产地:杭州</span>
     </more-bar-item>
     <more-bar-item path="/choose">
-      <img src="~/assets/img/more/any-mark.png" slot="item-icon" alt="" @click="chooseClick">
-      <img src="~/assets/img/more/any-mark.png" slot="item-icon-active" alt="" @click="chooseClick">
+      <img src="~/assets/img/more/any-mark.png" slot="item-icon" alt="">
+      <img src="~/assets/img/more/any-mark.png" slot="item-icon-active" alt="">
     </more-bar-item>
   </more-bar>
 </template>
@@ -36,11 +36,7 @@
       MoreBarItem,
       Choose
     },
-    methods: {
-      chooseClick() {
-        this.$router.push('/choose')
-      }
-    }
+
   }
 </script>
 

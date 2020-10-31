@@ -1,55 +1,88 @@
 <template>
-  <div class="discuss-bar-item" @click="itemClick">
-    <div v-if="!isActive"><slot name="item-icon"></slot></div>
-    <div v-else><slot name="item-icon-active"></slot></div>
+  <div>
+    <div class="discuss-bar-item">
+      <div class="title">
+        <div :class="[indexTitle==0?'chooseTitle':'']" @click="titleClick">推荐</div>
+        <div :class="[indexTitle==1?'chooseTitle':'']" @click="zheClick">浙茶</div>
+        <div :class="[indexTitle==2?'chooseTitle':'']" @click="longClick">龙井</div>
+        <div :class="[indexTitle==3?'chooseTitle':'']" @click="huaClick">花茶</div>
+        <div :class="[indexTitle==4?'chooseTitle':'']" @click="caiClick">采茶</div>
+        <button>更多</button>
+        <img src="@/assets/img/discuss/push.png" alt="" @click="pushClick">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+  import Push from "../discussChild/Push";
 
   export default {
     name: "DiscussBarItem",
-    computed: {
-      isActive() {
-        return this.$route.path.indexOf(this.path) !== -1
-      },
-      // activeStyle() {
-      //   return this.isActive ? {color: this.activeColor} : {}
-      // }
-    },
+    components: {
+      Push,
+     },
+     data() {
+        return {
+          indexTitle:0,
+        }
+     },
     methods: {
-      itemClick() {
-        this.$router.replace(this.path)
-      }
+      pushClick() {
+        this.$router.push('/push')
+      },
+      titleClick() {
+        this.indexTitle = 0
+      },
+      zheClick() {
+        this.indexTitle = 1
+      },
+      longClick() {
+        this.indexTitle = 2
+      },
+      huaClick() {
+        this.indexTitle = 3
+      },
+      caiClick() {
+        this.indexTitle = 4
+      },
     }
   }
 </script>
 
 <style scoped>
   .discuss-bar-item {
-    flex: 1;
+    width: 100%;
+    height: auto;
+  }
+  .title {
+    width: 100%;
+    height: 40px;
     display: flex;
-    align-items: center;
-    height: 30px;
-    padding: 5px;
+    margin: auto;
+    font-size: 12px;
     justify-content: space-around;
   }
-  .discuss-bar-item p {
-    font-size: 10px;
-    color: black;
+  .title div {
+    width: 30px;
+    margin: 10px;
+    text-align: center;
   }
-  .discuss-bar-item span {
-    font-size: 12px;
+  .chooseTitle {
+    font-size: 15px;
     font-weight: bold;
-    align-items: center;
-    padding: 0 0 3px 0;
-    color: black;
-    border-bottom: 2px solid rgb(76, 147, 113);
+    border-bottom: 2px solid #4C9371;
   }
-  .discuss-bar-item img {
+  .title button {
+    width: 35px;
+    height: 20px;
+    margin: 10px 5px 10px 0;
+    border-radius: 5px;
+    border: 0px;
+  }
+  .title img {
     width: auto;
-    height: 15px;
-    position: relative;
-    top: 2px;
+    height: 30px;
+    margin: auto;
   }
 </style>

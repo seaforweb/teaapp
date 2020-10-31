@@ -6,13 +6,13 @@
           <img :src="item.bac" alt="">
         </div>
         <div class="sec">
-          <div>
+          <div @click="followClick">
             <img src="@/assets/img/discuss/heart.png" alt="">
             <span>我的关注</span>
           </div>
-          <div>
+          <div @click="followClick">
             <img src="@/assets/img/discuss/notice.png" alt="">
-            <span>我的关注</span>
+            <span>我的消息</span>
           </div>
         </div>
         <div class="third">
@@ -76,11 +76,13 @@
 
 <script>
   import PersonalHead from "./PersonalHead";
+  import Follow from "./Follow";
 
   export default {
     name: "Personal",
     components: {
-      PersonalHead
+      PersonalHead,
+      Follow
     },
     data() {
       return {
@@ -135,6 +137,9 @@
           this.$router.go(-1)
         }
       },
+      followClick() {
+        this.$router.push('follow')
+      }
     }
   }
 </script>

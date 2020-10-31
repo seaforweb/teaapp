@@ -39,6 +39,18 @@
           {id: 4, idView: require("@/assets/img/more/body4.png"),
             cate: '红茶', place: '湖州', data: '1月'},
           {id: 5, idView: require("@/assets/img/more/body5.png"),
+            cate: '绿茶', place: '金华', data: '3月'},
+          {id: 6, idView: require("@/assets/img/more/body0.png"),
+            cate: '红茶', place: '嘉兴', data: '2月'},
+          {id: 7, idView: require("@/assets/img/more/body1.png"),
+            cate: '绿茶', place: '温州', data: '1月'},
+          {id: 8, idView: require("@/assets/img/more/body2.png"),
+            cate: '绿茶', place: '绍兴', data: '3月'},
+          {id: 9, idView: require("@/assets/img/more/body3.png"),
+            cate: '绿茶', place: '衢州', data: '4月'},
+          {id: 10, idView: require("@/assets/img/more/body4.png"),
+            cate: '红茶', place: '湖州', data: '1月'},
+          {id: 11, idView: require("@/assets/img/more/body5.png"),
             cate: '绿茶', place: '金华', data: '3月'}
         ]
       }

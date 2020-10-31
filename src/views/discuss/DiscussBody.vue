@@ -73,7 +73,7 @@
     margin-bottom: 50px;
 
     position: relative;
-    top: 45px;
+    top: 90px;
   }
   .top {
     width: 90%;

@@ -6,10 +6,13 @@ const Home = () => import('../views/home/Home')
 const HomeSearchChild = () => import('../components/content/homeSearch/HomeSearchChild')
 
 const Study = () => import('../views/study/Study')
+
 const Discuss = () => import('../views/discuss/Discuss')
 const DiscussBarItem = () => import('../views/discuss/discussBar/DiscussBarItem')
 const Personal = () => import('../views/discuss/personal/Personal')
 const PersonalHead = () => import('../views/discuss/personal/PersonalHead')
+const Push = () => import('../views/discuss/discussChild/Push')
+const Follow = () => import('../views/discuss/personal/Follow')
 
 const Register = () =>import('../views/register/Register')
 const Finding = () => import('../views/register/Finding')
@@ -69,6 +72,14 @@ const routes = [
   {
     path:'/personalHead',
     component: PersonalHead
+  },
+  {
+    path:'/push',
+    component: Push
+  },
+  {
+    path:'/follow',
+    component: Follow
   },
 
   {
