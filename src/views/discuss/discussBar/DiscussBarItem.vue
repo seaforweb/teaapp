@@ -7,7 +7,7 @@
         <div :class="[indexTitle==2?'chooseTitle':'']" @click="longClick">龙井</div>
         <div :class="[indexTitle==3?'chooseTitle':'']" @click="huaClick">花茶</div>
         <div :class="[indexTitle==4?'chooseTitle':'']" @click="caiClick">采茶</div>
-        <button>更多</button>
+        <button @click="btnClick">更多</button>
         <img src="@/assets/img/discuss/push.png" alt="" @click="pushClick">
       </div>
     </div>
@@ -46,6 +46,9 @@
       caiClick() {
         this.indexTitle = 4
       },
+      btnClick() {
+        alert("正在发掘，尽情期待！")
+      }
     }
   }
 </script>

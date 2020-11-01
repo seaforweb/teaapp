@@ -24,7 +24,7 @@ const Hangzhou = () => import('../views/more/childMore/Hangzhou')
 const Recommend = () => import('../views/more/childMore/Recommend')
 const ThreeMonth = () => import('../views/more/childMore/ThreeMonth')
 const Intro = () => import('../views/more/intro/Intro')
-
+const IntroChild = () => import('../views/more/intro/IntroChild')
 
 Vue.use(VueRouter)
 
@@ -109,6 +109,10 @@ const routes = [
   {
     path: '/intro',
     component: Intro
+  },
+  {
+    path: '/introChild',
+    component: IntroChild
   }
 ]
 

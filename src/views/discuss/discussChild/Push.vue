@@ -99,6 +99,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    position: fixed;
+    bottom: 60px;
+    z-index: 10;
   }
   .content button {
     width: 200px;

@@ -14,35 +14,58 @@
       </div>
       <p>产地</p>
       <div>
-        <span v-for="item in place">{{item}}</span>
+        <span v-for="item in place" :key="item.id" @click="introClick">{{item.place}}</span>
       </div>
       <p>品类</p>
       <div>
-        <span v-for="item in classify">{{item}}</span>
+        <span v-for="item in classify" :key="item.id" @click="introClick">{{item.classify}}</span>
       </div>
       <p>熟期</p>
       <div>
-        <span v-for="item in data">{{item}}</span>
+        <span v-for="item in data" :key="item.id" @click="introClick">{{item.data}}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import IntroChild from "../intro/IntroChild";
+
   export default {
     name: "Choose",
+    components: {
+      IntroChild
+    },
     data() {
       return {
         place:[
-            '杭州','宁波','舟山','湖州','嘉兴',
-            '金华','绍兴','温州','台州','衢州','丽水'
+          {id: 0, place:"杭州"},
+          {id: 1, place:"宁波"},
+          {id: 2, place:"舟山"},
+          {id: 3, place:"湖州"},
+          {id: 4, place:"嘉兴"},
+          {id: 5, place:"金华"},
+          {id: 6, place:"绍兴"},
+          {id: 7, place:"温州"},
+          {id: 8, place:"台州"},
+          {id: 9, place:"衢州"},
+          {id: 10, place:"丽水"}
         ],
         classify:[
-            '红茶','绿茶','青茶','黄茶','黑茶'
+          {id: 0, classify: "红茶"},
+          {id: 1, classify: "绿茶"},
+          {id: 2, classify: "青茶"},
+          {id: 3, classify: "黄茶"},
+          {id: 4, classify: "黑茶"}
         ],
         data:[
-            '1月~2月','2月~3月','3月~4月','1月',
-            '2月','3月','4月'
+          {id: 0, data: "1月~2月"},
+          {id: 1, data: "2月~3月"},
+          {id: 2, data: "3月~4月"},
+          {id: 3, data: "1月"},
+          {id: 4, data: "2月"},
+          {id: 5, data: "3月"},
+          {id: 6, data: "4月"}
         ]
       }
     },
@@ -55,6 +78,9 @@
           this.$router.go(-1)
         }
       },
+      introClick() {
+        this.$router.push('/IntroChild')
+      }
     }
   }
 </script>

@@ -112,7 +112,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: lightseagreen;
   }
   .chooseTitle {
     color: #4C9371;
