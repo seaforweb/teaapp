@@ -6,6 +6,7 @@ const Home = () => import('../views/home/Home')
 const HomeSearchChild = () => import('../components/content/homeSearch/HomeSearchChild')
 
 const Study = () => import('../views/study/Study')
+const Sitting = () => import('../views/study/studyChild/drinkTea/Sitting')
 
 const Discuss = () => import('../views/discuss/Discuss')
 const DiscussBarItem = () => import('../views/discuss/discussBar/DiscussBarItem')
@@ -55,6 +56,10 @@ const routes = [
   {
     path: '/study',
     component: Study
+  },
+  {
+    path: '/sitting',
+    component: Sitting
   },
 
   {

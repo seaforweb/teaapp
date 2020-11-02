@@ -92,7 +92,7 @@
               <th align="left">
                 <img src="@/assets/img/study/step1.png" alt="">
               </th>
-              <th align="right"><span>坐姿 ></span></th>
+              <th align="right"><span @click="sitClick">坐姿 ></span></th>
             </tr>
             <tr height="40px">
               <th align="left">
@@ -134,8 +134,13 @@
 </template>
 
 <script>
+  import Sitting from "../studyChild/drinkTea/Sitting";
+
   export default {
     name:"StudyBarItem",
+    components: {
+      Sitting
+    },
     data(){
       return {
         indexTitle:0,
@@ -195,6 +200,10 @@
         // console.log(index)
         this.moreText=this.text[index]
         this.showClick=true
+      },
+
+      sitClick() {
+        this.$router.push('/sitting')
       }
     }
   }
